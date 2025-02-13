@@ -1,6 +1,9 @@
 import requests
 import json
 from xml.dom.minidom import parseString
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from PIL import Image
 
 #Shuffle a deck of cards by making a request to the deckofcardsapi.com API
 shuffle_deck = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
@@ -28,6 +31,20 @@ for card in data1['cards']:
     card_hand.append(card['suit'])
     card_hand.append(card['images']['png'])
     print(f"{card['value']} of {card['suit']}")
+    #print the image of the card
+
+#Save a a json file to the data folder
+with open('data/card_hand.json', 'w') as f:
+    json.dump(data1, f)
+
+#Display the card hand dealt
+fig, ax = plt.subplots(1,5, figsize=(12,6))
+for i in range(5):
+    url = data1['cards'][i]['images']['png']
+    img = Image.open(requests.get(url, stream = True).raw)
+    ax[i].imshow(img)
+    ax[i].axis('off')
+plt.show()
 
 
 #Check for a pair, three of a kind or four of a kind in the card hand
@@ -48,8 +65,3 @@ for card in card_dict:
         print(f"Three of a kind {card}")
     elif card_dict[card] == 4:
         print(f"Four of a kind {card}")
-
-
-
-
-
