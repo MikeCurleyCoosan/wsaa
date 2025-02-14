@@ -19,10 +19,10 @@ doc = parseString(page.content)
 #print (doc.toprettyxml(newl='')) #output to console
 
 #To store the xml in a file. 
-#with open("trains.xml", "w") as f:
+#with open("data\trains.xml", "w") as f:
    # doc.writexml(f, newl='\n')
 
-with open ('week03_train.csv', mode='w', newline='') as train_file:
+with open ('data\week03_train.csv', mode='w', newline='') as train_file:
     train_writer = csv.writer(train_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
 
