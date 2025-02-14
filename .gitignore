@@ -171,4 +171,4 @@ cython_debug/
 .pypirc
 
 #Local files to be ignored for now
-/assignments/assignments2-carddraw.ipynb
+/assignments/assignment2-carddraw.ipynb
