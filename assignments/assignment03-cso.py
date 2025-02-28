@@ -18,6 +18,7 @@ response = requests.get(urlstart + dataset + urlend)
 #Check if the response code is not 200 and print an error message if it is not
 #Otherwise write the data to a file in the data folder called cso.json
 if response.status_code != 200:
+
     print("Error: API response code: " + str(response.status_code))
 else:
     with open("data/cso.json", "wt") as fp:

@@ -12,6 +12,7 @@ class Analyse:
         for card in hand:
             card_values[card['value']] = card_values.get(card['value'], 0) + 1
 
+
         #Create a list to store the result of the analysis
         result = []
         #Check for pairs, three of a kind, four of a kind and a full house
