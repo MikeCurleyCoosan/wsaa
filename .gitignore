@@ -173,4 +173,5 @@ cython_debug/
 #Local files to be ignored for now
 /assignments/assignment2-carddraw.ipynb
 /mywork/week5_work/config.py
+/assignments/data/config.py
 

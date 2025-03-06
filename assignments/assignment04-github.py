@@ -20,7 +20,8 @@ g = Github(apikey)
 repo = g.get_repo("MikeCurleyCoosan/wsaa")
 contents = repo.get_contents("assignments/data/assignment04.txt")
 
-#Decode the byte encoded contents.decoded_content... found this by trial and error
+#Decode the byte encoded contents.decoded_content..
+#...to a string and print it
 internal_str = contents.decoded_content
 internal_str = internal_str.decode("utf-8")
 print("decoded downloaded file content\n", internal_str,sep='')
